@@ -17,5 +17,9 @@
     "project structure"
   ],
   "author": "suraj chandra",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "git":"https://github.com/Surajchandraa/struct-nd.git",
+    "homepage":"https://github.com/Surajchandraa/struct-nd"
+  }
 }
