@@ -1,6 +1,6 @@
 {
   "name": "struct-nd",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "generate_structure.js",
   "bin": {
@@ -24,4 +24,3 @@
   },
   "homepage": "https://github.com/Surajchandraa/struct-nd"
 }
-
