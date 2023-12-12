@@ -9,7 +9,8 @@
 ## Usage:
 - first you have to start project by command `npm init -y` or `npm init`
 - install struct-nd `npm i struct-nd`.
-- Once struct-nd is installed, you can run the struct command in your desired project directory:
+- Once struct-nd is installed, you can run the struct command in your desired directory:
+- It will generate project structure in you current directory
 - run command `struct`.
 - This will generate the standard Node.js project structure as described below:
 
