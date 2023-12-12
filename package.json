@@ -19,7 +19,9 @@
   "author": "suraj chandra",
   "license": "ISC",
   "repository": {
-    "git":"https://github.com/Surajchandraa/struct-nd.git",
-    "homepage":"https://github.com/Surajchandraa/struct-nd"
-  }
+    "type": "git",
+    "url": "https://github.com/Surajchandraa/struct-nd.git"
+  },
+  "homepage": "https://github.com/Surajchandraa/struct-nd"
 }
+
