@@ -6,15 +6,16 @@
     `npm install -g struct-nd`
   This will make the struct command available globally on your system.
 
+- or `npm install struct-nd`
+
 ## Usage:
-- first you have to start project by command `npm init -y` or `npm init`
-- install struct-nd `npm i struct-nd`.
-- Once struct-nd is installed, you can run the struct command in your desired directory:
-- It will generate project structure in you current directory
-- run command `struct`.
-- This will generate the standard Node.js project structure as described below:
+- run command `struct express` to generating expressjs project structure.
+- `struct rest` - Rest Api structure.
+- `struct graph` - Graphql structure.
+- `struct typescript` - Typescript structure.
 
 
+## Express js Project structure:
 ```js
         my-nodejs-project/
 ├── node_modules/           # Installed dependencies (auto-generated)
@@ -35,3 +36,61 @@
 ├── tests/                  # Unit and integration tests
 ├── .gitignore              # Ignored files and directories for version control
 └── README.md               # Project documentation
+```
+
+## Rest Api Project Structure:
+```js
+  my-rest-api/
+├── node_modules/           # Installed dependencies (auto-generated)
+├── src/                    # Source code
+│   ├── controllers/        # API route handlers
+│   ├── middlewares/        # Middleware functions
+│   ├── models/             # Data models and database schemas
+│   ├── routes/             # API routes
+│   ├── services/           # Business logic and data processing
+├── config/                 # Configuration files (database, environment)
+│   ├── database.js
+│   ├── environment.js
+├── tests/                  # Unit and integration tests
+├── .gitignore              # Ignored files and directories for version control
+└── README.md               # Project documentation
+
+
+```
+
+## GraphQL Project Structure:
+```js
+my-graphql-project/
+├── node_modules/           # Installed dependencies (auto-generated)
+├── src/                    # Source code
+│   ├── graphql/            # GraphQL schema, resolvers, and types
+│   ├── models/             # Data models and database schemas
+│   ├── services/           # Business logic and data processing
+├── config/                 # Configuration files (database, environment)
+│   ├── database.js
+│   ├── environment.js
+├── tests/                  # Unit and integration tests
+├── .gitignore              # Ignored files and directories for version control
+└── README.md               # Project documentation
+
+```
+
+## TypeScript Project Structure:
+```js
+my-typescript-project/
+├── node_modules/           # Installed dependencies (auto-generated)
+├── src/                    # TypeScript source code
+│   ├── controllers/
+│   ├── middlewares/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+├── config/                 # Configuration files (database, environment)
+│   ├── database.ts
+│   ├── environment.ts
+├── tests/                  # Unit and integration tests
+├── tsconfig.json           # TypeScript compiler configuration
+├── .gitignore              # Ignored files and directories for version control
+└── README.md               # Project documentation
+
+```
