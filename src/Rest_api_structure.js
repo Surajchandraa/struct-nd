@@ -1,21 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-let current_dir=process.cwd();
+const path = require("path");
+const fs = require("fs");
+let current_dir=process.cwd()
 
 async function root_dir(){
-
     let data={
-        1:"public",
-        2:"src",
-        3:"config",
-        4:"tests"
+        1:"src",
+        2:"config",
+        3:"tests"
     }
 
     let data2={
         1:"readme.md",
         2:".gitignore"
     }
-    
+
     for(let element in data){
         let dir_path=path.join(current_dir,data[element]);
         if(!fs.existsSync(dir_path)){
@@ -28,53 +26,32 @@ async function root_dir(){
     }
 
     for(let element in data2){
-        let fs_path=path.join(current_dir,data2[element])
-        if(!fs.existsSync(fs_path)){
-            fs.writeFileSync(data2[element],'');
-            console.log(`${data2[element]} created successfully`);
-
+        let dir_path=path.join(current_dir,data2[element]);
+        if(!fs.existsSync(dir_path)){
+            fs.writeFileSync(data2[element])
+                console.log(`${data2[element]} created successfully`);
+            
         }
         else{
-            console.log(`${data2[element]} files already exists, skipping... `)
+            console.log(`${data2[element]} files already exists, skipping... `);
         }
     }
-
-    
-
-
 }
-
-async function public(){
-    let data3=['css','images','scripts'];
-let public_path=path.join(current_dir,'public');
-    data3.forEach(file=>{
-        let filePath = path.join(public_path, file);
-            
-        if (!fs.existsSync(filePath)) {
-            fs.mkdirSync(filePath);
-            console.log(`${file} directory created successfully!`);
-        } else {
-            console.log(`${file} directory already exists, skipping...`);
-        }
-    })
-}
-
 
 async function src(){
-    let data=['controllers','middlewares','models','routes','services','views'];
-    let src_path=path.join(current_dir,'src');
+    let data=['controllers','middlewares','models','routes','services'];
+    let dir_path=path.join(current_dir,"src");
     data.forEach(file=>{
-        let filePath = path.join(src_path, file);
-        
-        if (!fs.existsSync(filePath)) {
+        let filePath=path.join(dir_path,file)
+        if(!fs.existsSync(filePath)){
             fs.mkdirSync(filePath);
             console.log(`${file} directory created successfully!`);
-        } else {
+        }
+        else{
             console.log(`${file} directory already exists, skipping...`);
         }
     })
 
-    
 }
 
 async function config(){
@@ -92,11 +69,10 @@ async function config(){
     })
 }
 
-async function create_express(){
+async function create_rest(){
     let rt=await root_dir();
-    let pb=await public();
     let sr = await src();
     let cg = await config();
 }
 
-module.exports=create_express;
+module.exports=create_rest;
