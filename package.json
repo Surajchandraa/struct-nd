@@ -4,7 +4,7 @@
   "description": "",
   "main": "generate_structure.js",
   "bin": {
-    "struct": "./bin/struct"
+    "struct": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

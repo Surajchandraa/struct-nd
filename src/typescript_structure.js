@@ -75,10 +75,10 @@ async function config(){
     })
 }
 
-async function create_graph(){
+async function create_typescript(){
     let rt=await root_dir();
     let sr = await src();
     let cg = await config();
 }
 
-module.exports=create_graph;
+module.exports=create_typescript;
