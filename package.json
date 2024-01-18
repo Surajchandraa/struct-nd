@@ -1,6 +1,6 @@
 {
   "name": "struct-nd",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "",
   "main": "generate_structure.js",
   "bin": {
