@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const create_express = require("./src/express_structure");
 const create_graph = require("./src/graph_ql_structure");
 const create_rest = require("./src/Rest_api_structure");
