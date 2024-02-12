@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
-let current_dir=process.cwd()
+let current_dir=process.cwd();
+const ansi = require('./ansi');
 
 async function root_dir(){
     let data={
@@ -21,7 +22,7 @@ async function root_dir(){
             console.log(`${data[element]} created successfully`);
         }
         else{
-            console.log(`${data[element]} directory already exists, skipping...`);
+            console.log(ansi.fgRed+`"${data[element]}" directory already exists, skipping...`+ansi.reset);
         }
     }
 
@@ -33,7 +34,7 @@ async function root_dir(){
             
         }
         else{
-            console.log(`${data2[element]} files already exists, skipping... `);
+            console.log(ansi.fgRed+`"${data2[element]}" files already exists, skipping... `+ansi.reset);
         }
     }
 }
@@ -48,7 +49,7 @@ async function src(){
             console.log(`${file} directory created successfully!`);
         }
         else{
-            console.log(`${file} directory already exists, skipping...`);
+            console.log(ansi.fgRed+`"${file}" directory already exists, skipping...`+ansi.reset);
         }
     })
 
@@ -64,7 +65,7 @@ async function config(){
             fs.writeFileSync(filePath, '');
             console.log(`${file} created successfully!`);
         } else {
-            console.log(`${file} already exists, skipping...`);
+            console.log(ansi.fgRed+`${file} already exists, skipping...`+ansi.reset);
         }
     })
 }
