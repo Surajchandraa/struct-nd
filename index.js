@@ -19,6 +19,16 @@ else if(input=="graph"){
 else if(input=="typescript"){
     await create_typescript()
 }
+else if(input=="--help"){
+    console.log(`---Available commands----
+                    1. struct express
+                    2. struct rest
+                    3. struct graph 
+                    4. struct typescript`)
+}
+else{
+    console.log("Invalid command")
+}
 }
 
 
