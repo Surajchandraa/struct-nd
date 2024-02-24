@@ -94,5 +94,3 @@ my-typescript-project/
 └── README.md               # Project documentation
 
 ```
-
-## including help command
