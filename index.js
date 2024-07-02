@@ -3,6 +3,7 @@ const create_express = require("./src/express_structure");
 const create_graph = require("./src/graph_ql_structure");
 const create_rest = require("./src/Rest_api_structure");
 const create_typescript = require("./src/typescript_structure");
+const create_nextjs=require("./src/nextjs");
 
 let input = process.argv[2];
 
@@ -14,22 +15,26 @@ else if(input=="rest"){
     await create_rest();
 }
 else if(input=="graph"){
-    await create_graph()
+    await create_graph();
 }
 else if(input=="typescript"){
-    await create_typescript()
+    await create_typescript();
+}
+else if(input=="nextjs"){
+    await create_nextjs();
 }
 else if(input=="--help"){
     console.log(`---Available commands----
                     1. struct express
                     2. struct rest
                     3. struct graph 
-                    4. struct typescript`)
+                    4. struct typescript
+                    5. struct nextjs`);
 }
 else{
-    console.log("Invalid command")
+    console.log("Invalid command");
 }
 }
 
 
-create()
+create();
