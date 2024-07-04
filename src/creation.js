@@ -8,17 +8,17 @@ function CreateDirIfNotExist(dirpath,dirname){
         if(!fs.existsSync(dirpath)){
             fs.mkdir(dirpath,(err)=>{
                 if(err){
-                    console.error("error in creating directory", err);
+                    console.error("error in creating directory ", err);
                     reject(err);
                 }
                 else{
-                    console.log(ansi.fgGreen+"directory created sucessfully",dirname + ansi.reset);
+                    console.log(ansi.fgGreen+"directory created sucessfully ",dirname + ansi.reset);
                     resolve();
                 }
             })
         }
         else{
-            console.log(ansi.fgYellow+"directory already exists",dirname +ansi.reset);
+            console.log(ansi.fgYellow+"directory already exists skipping.. ",dirname +ansi.reset);
             resolve();
         }
     })
@@ -32,17 +32,17 @@ function CreateFileIfNotExist(filepath,filename){
         if(!fs.existsSync(filepath)){
             fs.writeFile(filename,'',(err)=>{
                 if(err){
-                    console.error("error in creating file",err);
+                    console.error("error in creating file ",err);
                     reject(err);
                 }
                 else{
-                    console.log(ansi.fgGreen+"File created sucessfully",filename+ansi.reset);
+                    console.log(ansi.fgGreen+"File created sucessfully ",filename+ansi.reset);
                     resolve();
                 }
             })
         }
         else{
-            console.log(ansi.fgGreen+"file already exists",filename+ansi.reset);
+            console.log(ansi.fgGreen+"file already exists skipping.. ",filename+ansi.reset);
             resolve();
         }
     })
