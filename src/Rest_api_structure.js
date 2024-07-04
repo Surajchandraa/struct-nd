@@ -1,79 +1,46 @@
-const path = require("path");
-const fs = require("fs");
-let current_dir=process.cwd();
-const ansi = require('./ansi');
+const path = require('path');
+const creation = require('./creation');
+let current_dir = process.cwd();
 
-async function root_dir(){
-    let data={
-        1:"src",
-        2:"config",
-        3:"tests"
+async function root_dir() {
+    let data = ["src", "config", "tests"];
+    let data2 = ["readme.md", ".gitignore"];
+
+    for (let element of data) {
+        let pathProvide = path.join(current_dir, element);
+        await creation.CreateDirIfNotExist(pathProvide, element);
     }
 
-    let data2={
-        1:"readme.md",
-        2:".gitignore"
-    }
-
-    for(let element in data){
-        let dir_path=path.join(current_dir,data[element]);
-        if(!fs.existsSync(dir_path)){
-            fs.mkdirSync(data[element]);
-            console.log(`${data[element]} created successfully`);
-        }
-        else{
-            console.log(ansi.fgRed+`"${data[element]}" directory already exists, skipping...`+ansi.reset);
-        }
-    }
-
-    for(let element in data2){
-        let dir_path=path.join(current_dir,data2[element]);
-        if(!fs.existsSync(dir_path)){
-            fs.writeFileSync(data2[element])
-                console.log(`${data2[element]} created successfully`);
-            
-        }
-        else{
-            console.log(ansi.fgRed+`"${data2[element]}" files already exists, skipping... `+ansi.reset);
-        }
+    for (let element of data2) {
+        let pathProvide = path.join(current_dir, element);
+        await creation.CreateFileIfNotExist(pathProvide, element);
     }
 }
 
-async function src(){
-    let data=['controllers','middlewares','models','routes','services'];
-    let dir_path=path.join(current_dir,"src");
-    data.forEach(file=>{
-        let filePath=path.join(dir_path,file)
-        if(!fs.existsSync(filePath)){
-            fs.mkdirSync(filePath);
-            console.log(`${file} directory created successfully!`);
-        }
-        else{
-            console.log(ansi.fgRed+`"${file}" directory already exists, skipping...`+ansi.reset);
-        }
-    })
-
+async function src() {
+    let data4 = ['controllers', 'middlewares', 'models', 'routes', 'services'];
+    for (let element of data4) {
+        let pathProvide = path.join(current_dir, 'src', element);
+        await creation.CreateDirIfNotExist(pathProvide, element);
+    }
 }
 
-async function config(){
-    let data2=['database.js','environment.js'];
-    let config_path=path.join(current_dir,'config');
-    data2.forEach(file=>{
-        let filePath = path.join(config_path, file);
-
-        if (!fs.existsSync(filePath)) {
-            fs.writeFileSync(filePath, '');
-            console.log(`${file} created successfully!`);
-        } else {
-            console.log(ansi.fgRed+`${file} already exists, skipping...`+ansi.reset);
-        }
-    })
+async function config() {
+    let data5 = ['database.js', 'environment.js'];
+    for (let element of data5) {
+        let pathProvide = path.join(current_dir, "config", element);
+        await creation.CreateFileIfNotExist(pathProvide, element);
+    }
 }
 
-async function create_rest(){
-    let rt=await root_dir();
-    let sr = await src();
-    let cg = await config();
+async function create_rest() {
+    try {
+        await root_dir();
+        await src();
+        await config();
+    } catch (error) {
+        console.error("Error creating project structure", error);
+    }
 }
 
-module.exports=create_rest;
+module.exports = create_rest;
