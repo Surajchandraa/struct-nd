@@ -13,6 +13,7 @@
 - `struct rest` - Rest Api structure.
 - `struct graph` - Graphql structure.
 - `struct typescript` - Typescript structure.
+- `struct nextjs` - nextjs structure.
 
 
 ## Express js Project structure:
@@ -92,5 +93,31 @@ my-typescript-project/
 ├── tsconfig.json           # TypeScript compiler configuration
 ├── .gitignore              # Ignored files and directories for version control
 └── README.md               # Project documentation
+
+```
+
+## Nextjs Project structure:
+```js
+my-nextjs-project/
+├── node_modules/           # Installed dependencies (auto-generated)
+├── public/                 # Static assets (images, etc.)
+├── src/                    # Source code
+│   ├── components/         # Reusable components
+│   ├── pages/              # Next.js pages
+│   │   ├── api/            # API routes (serverless functions)
+│   │   ├── _app.js         # Custom App component
+│   │   ├── _document.js    # Custom Document component
+│   ├── styles/             # CSS/Sass styles
+│   ├── utils/              # Utility functions
+│   ├── hooks/              # Custom hooks
+│   ├── contexts/           # Context providers
+│   ├── lib/                # Libraries and helper functions
+├── tests/                  # Unit and integration tests
+├── .gitignore              # Ignored files and directories for version control
+├── next.config.js          # Next.js configuration
+├── package.json            # Project dependencies and scripts
+├── README.md               # Project documentation
+├── jsconfig.json           # JavaScript configuration (or tsconfig.json for TypeScript)
+└── .env                    # Environment variables
 
 ```
