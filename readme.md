@@ -1,6 +1,15 @@
 # struct-nd
 `struct-nd` is a Node.js package that simplifies the process of setting up a standard Node.js project structure. With a single command, you can generate the recommended file and directory layout commonly used in Node.js projects.
 
+## Table of contents:
+- [Installation][#Installation]
+- [Usage][#Usage]
+- [Express js Project structure][#Express js Project structure]
+- [Rest Api Project Structure][#Rest Api Project Structure]
+- [GraphQL Project Structure][#GraphQL Project Structure]
+- [TypeScript Project Structure][#TypeScript Project Structure]
+- [Nextjs Project structure][#Nextjs Project structure]
+
 ## Installation:
 - To install `struct-nd`, use the following command:
     `npm install -g struct-nd`
